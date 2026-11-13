@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prakruthi A L - Profile</title>
+
+  <!-- INTERNAL CSS -->
+  <style>
+    :root {
+      --bg: #f5f3ff;
+      --card: #ffffff;
+      --text: #1f1d2b;
+      --muted: #6b6880;
+      --main: #7c3aed;
+    }
+    body.dark {
+      --bg: #14121f;
+      --card: #1f1c2e;
+      --text: #f1effa;
+      --muted: #a9a5c0;
+      --main: #a78bfa;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 14px 6%;
+      background: var(--card);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+    nav .logo { font-weight: 700; color: var(--main); font-size: 1.2rem; }
+    nav ul { list-style: none; display: flex; gap: 20px; align-items: center; }
+    nav a { text-decoration: none; color: var(--text); font-weight: 500; }
+    nav a:hover { color: var(--main); }
+    #themeBtn {
+      border: none; background: var(--main); color: #fff;
+      padding: 6px 12px; border-radius: 20px; cursor: pointer;
+    }
+    header {
+      text-align: center;
+      padding: 90px 6% 70px;
+    }
+    .avatar {
+      width: 110px; height: 110px; border-radius: 50%;
+      background: var(--main); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.6rem; font-weight: 700; margin: 0 auto 18px;
+    }
+    header h1 { font-size: 2.3rem; }
+    header h1 span { color: var(--main); }
+    #typing { color: var(--muted); font-size: 1.2rem; min-height: 1.8rem; margin-top: 8px; }
+    section { padding: 50px 6%; max-width: 900px; margin: auto; }
+    section h2 {
+      color: var(--main); margin-bottom: 22px; font-size: 1.7rem;
+      border-bottom: 3px solid var(--main); display: inline-block;
+    }
+    .card {
+      background: var(--card);
+      padding: 20px 22px; border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      margin-bottom: 18px;
+      border-left: 5px solid var(--main);
+      transition: transform 0.2s;
+    }
+    .card:hover { transform: translateY(-4px); }
+    .card h3 { font-size: 1.1rem; }
+    .card p { color: var(--muted); }
+    .tag {
+      display: inline-block; font-size: 0.8rem;
+      background: var(--main); color: #fff;
+      padding: 2px 10px; border-radius: 12px; margin-bottom: 6px;
+    }
+    form { display: grid; gap: 12px; }
+    input, textarea {
+      padding: 10px 12px; border-radius: 8px;
+      border: 1px solid var(--muted);
+      background: var(--card); color: var(--text); font-size: 1rem;
+    }
+    button.send {
+      padding: 11px; border: none; border-radius: 8px;
+      background: var(--main); color: #fff; font-size: 1rem; cursor: pointer;
+    }
+    #msg { margin-top: 10px; font-weight: 600; }
+    footer { text-align: center; padding: 24px; color: var(--muted); }
+    @media (max-width: 600px) {
+      nav ul { gap: 10px; font-size: 0.9rem; }
+      header h1 { font-size: 1.7rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HTML -->
+  <nav>
+    <div class="logo">Prakruthi A L</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><button id="themeBtn">Dark</button></li>
+    </ul>
+  </nav>
+
+  <header>
+    <div class="avatar">P</div>
+    <h1>Hi, I am <span>Prakruthi A L</span></h1>
+    <p id="typing"></p>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="card">
+      <p>
+        I am Prakruthi A L. I am studying for my BE degree at RRCE.
+        I like to learn new things and build web pages and projects.
+      </p>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+
+    <div class="card">
+      <span class="tag">Now</span>
+      <h3>BE Degree - RRCE</h3>
+      <p>Currently studying.</p>
+    </div>
+
+    <div class="card">
+      <span class="tag">PU</span>
+      <h3>Vidhyanikethan PU College, Gangavathi</h3>
+      <p>Completed my PU here.</p>
+    </div>
+
+    <div class="card">
+      <span class="tag">School</span>
+      <h3>Bhethel High School</h3>
+      <p>Completed my schooling here.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your name">
+      <input type="email" id="email" placeholder="Your email">
+      <textarea id="message" rows="4" placeholder="Your message"></textarea>
+      <button type="submit" class="send">Send Message</button>
+    </form>
+    <p id="msg"></p>
+  </section>
+
+  <footer>&copy; <span id="year"></span> Prakruthi A L. All rights reserved.</footer>
+
+  <!-- INTERNAL JAVASCRIPT -->
+  <script>
+    // 1. Typing effect
+    const lines = ["BE Student at RRCE", "Web Page Learner", "Always Learning"];
+    let lineIndex = 0, charIndex = 0, deleting = false;
+    const typingEl = document.getElementById("typing");
+
+    function typeEffect() {
+      const current = lines[lineIndex];
+      typingEl.textContent = current.substring(0, charIndex);
+
+      if (!deleting && charIndex < current.length) {
+        charIndex++;
+        setTimeout(typeEffect, 100);
+      } else if (!deleting) {
+        deleting = true;
+        setTimeout(typeEffect, 1200);
+      } else if (charIndex > 0) {
+        charIndex--;
+        setTimeout(typeEffect, 50);
+      } else {
+        deleting = false;
+        lineIndex = (lineIndex + 1) % lines.length;
+        setTimeout(typeEffect, 300);
+      }
+    }
+    typeEffect();
+
+    // 2. Dark and light mode button
+    const themeBtn = document.getElementById("themeBtn");
+    themeBtn.addEventListener("click", function () {
+      document.body.classList.toggle("dark");
+      themeBtn.textContent = document.body.classList.contains("dark") ? "Light" : "Dark";
+    });
+
+    // 3. Contact form check
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+      const msg = document.getElementById("msg");
+
+      if (name === "" || email === "" || message === "") {
+        msg.style.color = "red";
+        msg.textContent = "Please fill all the fields.";
+      } else if (!email.includes("@")) {
+        msg.style.color = "red";
+        msg.textContent = "Please enter a correct email.";
+      } else {
+        msg.style.color = "green";
+        msg.textContent = "Thank you, " + name + "! Your message is sent.";
+        this.reset();
+      }
+    });
+
+    // 4. Show current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
